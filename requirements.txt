@@ -5,6 +5,9 @@ certifi==2018.1.18
 cffi==1.11.5
 chardet==3.0.4
 colorama==0.3.9
+colorlog
+opuslib
+pip
 discord.py==0.16.12
 discord.py[voice] ~= 0.16.0
 idna==2.6
