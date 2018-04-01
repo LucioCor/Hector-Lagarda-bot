@@ -32,9 +32,3 @@ Please refer to LICENSE made by Rapptz
 
 Author:
 Lucio Corujo
-
-
-
-
-
-
