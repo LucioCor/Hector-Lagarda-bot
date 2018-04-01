@@ -1,1 +1,1 @@
-worker: python Hector Lagarda.py
+worker: python Hector-Lagarda-bot.py
