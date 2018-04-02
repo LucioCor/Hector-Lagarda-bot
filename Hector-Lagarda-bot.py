@@ -7,11 +7,11 @@ import io
 import safygiphy
 import requests
 from discord.ext import commands
-from .opus_loader import load_opus_lib
 
 g = safygiphy.Giphy()
 
-load_opus_lib()
+if not discord.opus.is_loaded():
+    discord.opus.load_opus('opus')
 
 class VoiceEntry:
     def __init__(self, message, player):
