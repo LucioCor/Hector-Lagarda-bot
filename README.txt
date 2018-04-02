@@ -28,7 +28,7 @@ Audios:
 
 LICENSE:
 This bot was made for personal use and no other itention
-Please refer to LICENSE made by Rapptz
+Please refer to LICENSE
 
 Author:
 Lucio Corujo
