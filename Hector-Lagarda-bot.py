@@ -11,7 +11,7 @@ from discord.ext import commands
 g = safygiphy.Giphy()
 
 if not discord.opus.is_loaded():
-    discord.opus.load_opus('opus')
+    discord.opus.load_opus('opus.py')
 
 class VoiceEntry:
     def __init__(self, message, player):
