@@ -16,7 +16,7 @@ if not discord.opus.is_loaded():
     # you should replace this with the location the
     # opus library is located in and with the proper filename.
     # note that on windows this DLL is automatically provided for you
-    discord.opus.load_opus('opus_lib')
+    discord.opus.load_opus('opus.py')
 
 class VoiceEntry:
     def __init__(self, message, player):
