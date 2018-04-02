@@ -7,7 +7,6 @@ chardet==3.0.4
 colorama==0.3.9
 colorlog
 pip
-libopus0
 opuslib
 opus
 discord.py[voice]
