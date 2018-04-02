@@ -4,3 +4,7 @@ software-properties-common
 libopus-dev
 libffi-dev 
 libsodium-dev
+libopus0
+git
+libssl-dev
+:repo:ppa:mc3man/xerus-media -y
