@@ -334,7 +334,7 @@ class Music:
         return True
     
     @commands.command(pass_context=True, no_pm=True)
-    async def pacheco(self, ctx):
+    async def agusto(self, ctx):
         summoned_channel = ctx.message.author.voice_channel
         if summoned_channel is None:
             await self.bot.say('You are not in a voice channel.')
@@ -353,7 +353,7 @@ class Music:
         return True
     
     @commands.command(pass_context=True, no_pm=True)
-    async def agusto(self, ctx):
+    async def pacheco(self, ctx):
         summoned_channel = ctx.message.author.voice_channel
         if summoned_channel is None:
             await self.bot.say('You are not in a voice channel.')
