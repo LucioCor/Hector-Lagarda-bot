@@ -332,6 +332,82 @@ class Music:
             player.start()
 
         return True
+    
+    @commands.command(pass_context=True, no_pm=True)
+    async def pacheco(self, ctx):
+        summoned_channel = ctx.message.author.voice_channel
+        if summoned_channel is None:
+            await self.bot.say('You are not in a voice channel.')
+            return False
+
+        state = self.get_voice_state(ctx.message.server)
+        if state.voice is None:
+            state.voice = await self.bot.join_voice_channel(summoned_channel)
+            player = state.voice.create_ffmpeg_player('./Audio/pacheco.mp3')
+            player.start()
+        else:
+            await state.voice.move_to(summoned_channel)
+            player = state.voice.create_ffmpeg_player('./Audio/pacheco.mp3')
+            player.start()
+
+        return True
+    
+    @commands.command(pass_context=True, no_pm=True)
+    async def agusto(self, ctx):
+        summoned_channel = ctx.message.author.voice_channel
+        if summoned_channel is None:
+            await self.bot.say('You are not in a voice channel.')
+            return False
+
+        state = self.get_voice_state(ctx.message.server)
+        if state.voice is None:
+            state.voice = await self.bot.join_voice_channel(summoned_channel)
+            player = state.voice.create_ffmpeg_player('./Audio/agusto.mp3')
+            player.start()
+        else:
+            await state.voice.move_to(summoned_channel)
+            player = state.voice.create_ffmpeg_player('./Audio/agusto.mp3')
+            player.start()
+
+        return True
+    
+    @commands.command(pass_context=True, no_pm=True)
+    async def jalo(self, ctx):
+        summoned_channel = ctx.message.author.voice_channel
+        if summoned_channel is None:
+            await self.bot.say('You are not in a voice channel.')
+            return False
+
+        state = self.get_voice_state(ctx.message.server)
+        if state.voice is None:
+            state.voice = await self.bot.join_voice_channel(summoned_channel)
+            player = state.voice.create_ffmpeg_player('./Audio/jalo.mp3')
+            player.start()
+        else:
+            await state.voice.move_to(summoned_channel)
+            player = state.voice.create_ffmpeg_player('./Audio/jalo.mp3')
+            player.start()
+
+        return True
+
+    @commands.command(pass_context=True, no_pm=True)
+    async def pacheco2(self, ctx):
+        summoned_channel = ctx.message.author.voice_channel
+        if summoned_channel is None:
+            await self.bot.say('You are not in a voice channel.')
+            return False
+
+        state = self.get_voice_state(ctx.message.server)
+        if state.voice is None:
+            state.voice = await self.bot.join_voice_channel(summoned_channel)
+            player = state.voice.create_ffmpeg_player('./Audio/pacheco2.mp3')
+            player.start()
+        else:
+            await state.voice.move_to(summoned_channel)
+            player = state.voice.create_ffmpeg_player('./Audio/pacheco2.mp3')
+            player.start()
+
+        return True
 
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('$'), description='A playlist example for discord.py')
 bot.add_cog(Music(bot))
@@ -365,7 +441,7 @@ async def on_message(message):
         await bot.send_file(message.channel, io.BytesIO(response.raw.read()), filename='ganzo.gif', content='Aahh aaah Soteloo! Gif.')
     
     if message.content.startswith('!help'):
-        await bot.send_message(message.channel, 'Frases:\n!frase\nGifs:\n!kiss\n!sotelo\nAudios:\n@Hector-Lagarda sotelo\n@Hector-Lagarda sotelo2\n@Hector-Lagarda sostenlo\n@Hector-Lagarda fonsi\n@Hector-Lagarda ohmaigad')
+        await bot.send_message(message.channel, 'Frases:\n!frase\nGifs:\n!kiss\n!sotelo\nAudios:\n@Hector-Lagarda sotelo\n@Hector-Lagarda sotelo2\n@Hector-Lagarda sostenlo\n@Hector-Lagarda fonsi\n@Hector-Lagarda ohmaigad\n@Hector-Lagarda pacheco\n@Hector-Lagarda agusto\n@Hector-Lagarda jalo\n@Hector-Lagarda pacheco2')
     await bot.process_commands(message)    
 
 bot.run('NDI5MzgxOTU0MzU0NTQ0NjUw.DaFTeg.O_4Co5p9IdBTHwqg3p7VoHklMQQ')
