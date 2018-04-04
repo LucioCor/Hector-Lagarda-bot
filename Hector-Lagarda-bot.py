@@ -448,6 +448,7 @@ bot.add_cog(Music(bot))
 @bot.event
 async def on_ready():
     print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
+    await bot.change_presence(game=discord.Game(name="Pollo"))
 
 @bot.event
 async def on_message(message):
