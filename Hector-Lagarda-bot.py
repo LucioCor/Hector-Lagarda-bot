@@ -474,7 +474,7 @@ async def on_message(message):
         await bot.send_file(message.channel, io.BytesIO(response.raw.read()), filename='ganzo.gif', content='Aahh aaah Soteloo! Gif.')
     
     if message.content.startswith('!help'):
-        await bot.send_message(message.channel, 'Comandos:\n!help\n@Hector-Lagarda leave\nFrases:\n!frase\nGifs:\n!kiss\n!sotelo\nAudios:\n@Hector-Lagarda sotelo\n@Hector-Lagarda sotelo2\n@Hector-Lagarda sostenlo\n@Hector-Lagarda fonsi\n@Hector-Lagarda ohmaigad\n@Hector-Lagarda pacheco\n@Hector-Lagarda agusto\n@Hector-Lagarda jalo\n@Hector-Lagarda pacheco2')
+        await bot.send_message(message.channel, 'Comandos:\n!help\n@Hector-Lagarda stop\nFrases:\n!frase\nGifs:\n!kiss\n!sotelo\nAudios:\n@Hector-Lagarda sotelo\n@Hector-Lagarda sotelo2\n@Hector-Lagarda sostenlo\n@Hector-Lagarda fonsi\n@Hector-Lagarda ohmaigad\n@Hector-Lagarda pacheco\n@Hector-Lagarda agusto\n@Hector-Lagarda jalo\n@Hector-Lagarda pacheco2')
     await bot.process_commands(message)    
 
 bot.run('NDI5MzgxOTU0MzU0NTQ0NjUw.DaFTeg.O_4Co5p9IdBTHwqg3p7VoHklMQQ')
