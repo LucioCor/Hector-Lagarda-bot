@@ -9,6 +9,7 @@ import requests
 from discord.ext import commands
 
 g = safygiphy.Giphy()
+voz = True
 
 if not discord.opus.is_loaded():
     discord.opus.load_opus('libopus.so')
@@ -196,13 +197,27 @@ class Music:
             await state.voice.disconnect()
         except:
             pass
+        
+    @commands.command(pass_context=True, no_pm=True)
+    async def leave(self, ctx):
+
+        server = ctx.message.server
+        state = self.get_voice_state(server)
+
+        if not state.is_playing():
+            player = state.player
+            player.stop()
+
+        if not state.is_playing():
+            del self.voice_states[server.id]
+            await state.voice.disconnect()
 
     @commands.command(pass_context=True, no_pm=True)
     async def skip(self, ctx):
         """Vote to skip a song. The song requester can automatically skip.
         3 skip votes are needed for the song to be skipped.
         """
-
+        
         state = self.get_voice_state(ctx.message.server)
         if not state.is_playing():
             await self.bot.say('Not playing any music right now...')
@@ -240,174 +255,192 @@ class Music:
 
     @commands.command(pass_context=True, no_pm=True)
     async def ohmaigad(self, ctx):
-        summoned_channel = ctx.message.author.voice_channel
-        if summoned_channel is None:
-            await self.bot.say('You are not in a voice channel.')
-            return False
-
-        state = self.get_voice_state(ctx.message.server)
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
         if state.voice is None:
-            state.voice = await self.bot.join_voice_channel(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/ohmaigad.mp3')
-            player.start()
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/ohmaigad.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
         else:
-            await state.voice.move_to(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/ohmaigad.mp3')
-            player.start()
-
-        return True
+            return
 
     @commands.command(pass_context=True, no_pm=True)
     async def sotelo(self, ctx):
-        summoned_channel = ctx.message.author.voice_channel
-        if summoned_channel is None:
-            await self.bot.say('You are not in a voice channel.')
-            return False
-
-        state = self.get_voice_state(ctx.message.server)
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
         if state.voice is None:
-            state.voice = await self.bot.join_voice_channel(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/sotelo.mp3')
-            player.start()
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/sotelo.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
         else:
-            await state.voice.move_to(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/sotelo.mp3')
-            player.start()
-
-        return True
+            return
 
     @commands.command(pass_context=True, no_pm=True)
     async def sotelo2(self, ctx):
-        summoned_channel = ctx.message.author.voice_channel
-        if summoned_channel is None:
-            await self.bot.say('You are not in a voice channel.')
-            return False
-
-        state = self.get_voice_state(ctx.message.server)
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
         if state.voice is None:
-            state.voice = await self.bot.join_voice_channel(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/sotelo2.mp3')
-            player.start()
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/sotelo2.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
         else:
-            await state.voice.move_to(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/sotelo2.mp3')
-            player.start()
-
-        return True
+            return
 
     @commands.command(pass_context=True, no_pm=True)
     async def sostenlo(self, ctx):
-        summoned_channel = ctx.message.author.voice_channel
-        if summoned_channel is None:
-            await self.bot.say('You are not in a voice channel.')
-            return False
-
-        state = self.get_voice_state(ctx.message.server)
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
         if state.voice is None:
-            state.voice = await self.bot.join_voice_channel(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/sostenlo.mp3')
-            player.start()
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/sostenlo.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
         else:
-            await state.voice.move_to(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/sostenlo.mp3')
-            player.start()
-
-        return True
+            return
 
     @commands.command(pass_context=True, no_pm=True)
     async def fonsi(self, ctx):
-        summoned_channel = ctx.message.author.voice_channel
-        if summoned_channel is None:
-            await self.bot.say('You are not in a voice channel.')
-            return False
-
-        state = self.get_voice_state(ctx.message.server)
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
         if state.voice is None:
-            state.voice = await self.bot.join_voice_channel(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/fonsi.mp3')
-            player.start()
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/fonsi.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
         else:
-            await state.voice.move_to(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/fonsi.mp3')
-            player.start()
-
-        return True
+            return
     
     @commands.command(pass_context=True, no_pm=True)
     async def agusto(self, ctx):
-        summoned_channel = ctx.message.author.voice_channel
-        if summoned_channel is None:
-            await self.bot.say('You are not in a voice channel.')
-            return False
-
-        state = self.get_voice_state(ctx.message.server)
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
         if state.voice is None:
-            state.voice = await self.bot.join_voice_channel(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/pacheco.mp3')
-            player.start()
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/pacheco.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
         else:
-            await state.voice.move_to(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/pacheco.mp3')
-            player.start()
-
-        return True
+            return
     
     @commands.command(pass_context=True, no_pm=True)
     async def pacheco(self, ctx):
-        summoned_channel = ctx.message.author.voice_channel
-        if summoned_channel is None:
-            await self.bot.say('You are not in a voice channel.')
-            return False
-
-        state = self.get_voice_state(ctx.message.server)
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
         if state.voice is None:
-            state.voice = await self.bot.join_voice_channel(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/agusto.mp3')
-            player.start()
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/agusto.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
         else:
-            await state.voice.move_to(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/agusto.mp3')
-            player.start()
-
-        return True
+            return
     
     @commands.command(pass_context=True, no_pm=True)
     async def jalo(self, ctx):
-        summoned_channel = ctx.message.author.voice_channel
-        if summoned_channel is None:
-            await self.bot.say('You are not in a voice channel.')
-            return False
-
-        state = self.get_voice_state(ctx.message.server)
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
         if state.voice is None:
-            state.voice = await self.bot.join_voice_channel(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/jalo.mp3')
-            player.start()
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/jalo.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
         else:
-            await state.voice.move_to(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/jalo.mp3')
-            player.start()
-
-        return True
+            return
 
     @commands.command(pass_context=True, no_pm=True)
     async def pacheco2(self, ctx):
-        summoned_channel = ctx.message.author.voice_channel
-        if summoned_channel is None:
-            await self.bot.say('You are not in a voice channel.')
-            return False
-
-        state = self.get_voice_state(ctx.message.server)
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
         if state.voice is None:
-            state.voice = await self.bot.join_voice_channel(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/pacheco2.mp3')
-            player.start()
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/pacheco2.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
         else:
-            await state.voice.move_to(summoned_channel)
-            player = state.voice.create_ffmpeg_player('./Audio/pacheco2.mp3')
-            player.start()
-
-        return True
+            return
 
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('$'), description='A playlist example for discord.py')
 bot.add_cog(Music(bot))
@@ -441,7 +474,7 @@ async def on_message(message):
         await bot.send_file(message.channel, io.BytesIO(response.raw.read()), filename='ganzo.gif', content='Aahh aaah Soteloo! Gif.')
     
     if message.content.startswith('!help'):
-        await bot.send_message(message.channel, 'Frases:\n!frase\nGifs:\n!kiss\n!sotelo\nAudios:\n@Hector-Lagarda sotelo\n@Hector-Lagarda sotelo2\n@Hector-Lagarda sostenlo\n@Hector-Lagarda fonsi\n@Hector-Lagarda ohmaigad\n@Hector-Lagarda pacheco\n@Hector-Lagarda agusto\n@Hector-Lagarda jalo\n@Hector-Lagarda pacheco2')
+        await bot.send_message(message.channel, 'Comandos:\n!help\n!leave\nFrases:\n!frase\nGifs:\n!kiss\n!sotelo\nAudios:\n@Hector-Lagarda sotelo\n@Hector-Lagarda sotelo2\n@Hector-Lagarda sostenlo\n@Hector-Lagarda fonsi\n@Hector-Lagarda ohmaigad\n@Hector-Lagarda pacheco\n@Hector-Lagarda agusto\n@Hector-Lagarda jalo\n@Hector-Lagarda pacheco2')
     await bot.process_commands(message)    
 
 bot.run('NDI5MzgxOTU0MzU0NTQ0NjUw.DaFTeg.O_4Co5p9IdBTHwqg3p7VoHklMQQ')
