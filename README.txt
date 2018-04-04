@@ -16,7 +16,7 @@ Commands:
 Type !help for the following list of commands:
 Basic commands:
 !help
-@Hector-Lagarda leave
+@Hector-Lagarda stop
 Frases:
 !frase
 Gifs:
