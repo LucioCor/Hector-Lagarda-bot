@@ -14,6 +14,9 @@ pip install from discord: pip install discord.py[voice]
 
 Commands:
 Type !help for the following list of commands:
+Basic commands:
+!help
+@Hector-Lagarda leave
 Frases:
 !frase
 Gifs:
@@ -25,6 +28,10 @@ Audios:
 @Hector-Lagarda sostenlo
 @Hector-Lagarda fonsi
 @Hector-Lagarda ohmaigad
+@Hector-Lagarda pacheco
+@Hector-Lagarda pacheco2
+@Hector-Lagarda agusto
+@Hector-Lagarda jalo
 
 LICENSE:
 This bot was made for personal use and no other itention
