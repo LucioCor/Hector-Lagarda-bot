@@ -9,7 +9,7 @@ import requests
 from discord.ext import commands
 
 from boto.s3.connection import S3Connection
-s3 = S3Connection(os.environ.get['S3_TOKEN'])
+s3 = S3Connection(os.environ['S3_TOKEN'])
 
 g = safygiphy.Giphy()
 voz = True
