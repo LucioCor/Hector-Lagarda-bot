@@ -9,6 +9,7 @@ import requests
 from discord.ext import commands
 
 TOKEN = os.environ.get('TOKEN', None)
+print(TOKEN)
 
 g = safygiphy.Giphy()
 voz = True
