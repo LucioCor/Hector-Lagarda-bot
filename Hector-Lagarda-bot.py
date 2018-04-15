@@ -8,8 +8,8 @@ import safygiphy
 import requests
 from discord.ext import commands
 
-from boto.TOKEN.connection import TOKENConnection
-TOKEN = TOKENConnection(os.environ['TOKEN'])
+from boto.s3.connection import S3Connection
+s3 = S3Connection(os.environ['TOKEN'])
 
 g = safygiphy.Giphy()
 voz = True
