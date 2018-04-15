@@ -9,7 +9,7 @@ import requests
 from discord.ext import commands
 
 from boto.s3.connection import S3Connection
-S3_TOKEN = os.environ('S3_TOKEN')
+s3 = S3Connection(os.environ['S3_KEY'])
 
 g = safygiphy.Giphy()
 voz = True
@@ -481,4 +481,4 @@ async def on_message(message):
         await bot.send_message(message.channel, 'Comandos:\n!help\n@Hector-Lagarda stop\nFrases:\n!frase\nGifs:\n!kiss\n!sotelo\nAudios:\n@Hector-Lagarda sotelo\n@Hector-Lagarda sotelo2\n@Hector-Lagarda sostenlo\n@Hector-Lagarda fonsi\n@Hector-Lagarda ohmaigad\n@Hector-Lagarda pacheco\n@Hector-Lagarda agusto\n@Hector-Lagarda jalo\n@Hector-Lagarda pacheco2')
     await bot.process_commands(message)    
 
-bot.run('S3_TOKEN')
+bot.run('S3_KEY')
