@@ -479,4 +479,5 @@ async def on_message(message):
     await bot.process_commands(message)    
     
 TOKEN = os.environ.get('TOKEN', None)
+print(TOKEN)
 bot.run('TOKEN')
