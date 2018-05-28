@@ -441,7 +441,70 @@ class Music:
             pass
         else:
             return
+        
+    @commands.command(pass_context=True, no_pm=True)
+    async def vaquero(self, ctx):
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
+        if state.voice is None:
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/vaquero.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
+        else:
+            return
 
+    @commands.command(pass_context=True, no_pm=True)
+    async def pinky(self, ctx):
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
+        if state.voice is None:
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/pinky.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
+        else:
+            return
+        
+    @commands.command(pass_context=True, no_pm=True)
+    async def gag(self, ctx):
+        global voz
+        server = ctx.message.server
+        state = self.get_voice_state(server)
+        if state.voice is None:
+            success = await ctx.invoke(self.summon)
+            if not success:
+                return
+        try:
+            if voz is True:
+                player = state.voice.create_ffmpeg_player('./Audio/gag.mp3')
+                player.start()
+                while not player.is_done():
+                    voz = False
+                voz = True
+        except:
+            pass
+        else:
+            return
+        
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('$'), description='A playlist example for discord.py')
 bot.add_cog(Music(bot))
 
@@ -480,4 +543,4 @@ async def on_message(message):
     
 TOKEN = os.environ.get('TOKEN', None)
 print(TOKEN)
-bot.run('TOKEN')
+bot.run('NDI5MzgxOTU0MzU0NTQ0NjUw.DbV62g.31OpJJMi5YD0Us0Js1qpm-BdjVY')
