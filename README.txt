@@ -32,6 +32,9 @@ Audios:
 @Hector-Lagarda pacheco2
 @Hector-Lagarda agusto
 @Hector-Lagarda jalo
+@Hector-Lagarda pinky
+@Hector-Lagarda gag
+@Hector-Lagarda vaquero
 
 LICENSE:
 This bot was made for personal use and no other itention
