@@ -39,7 +39,7 @@ Audios:
 @Hector-Lagarda gag
 @Hector-Lagarda vaquero
 @Hector-Lagarda sotelovv
-@Hector-Lagarda nose
+@Hector-Lagarda patito
 @Hector-Lagarda venga
 
 LICENSE:
