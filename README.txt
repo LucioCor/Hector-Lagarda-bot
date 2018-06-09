@@ -25,6 +25,9 @@ Gifs:
 Audios:
 @Hector-Lagarda sotelo
 @Hector-Lagarda sotelo2
+@Hector-Lagarda sotelo3
+@Hector-Lagarda sotelo4
+@Hector-Lagarda sotelo5
 @Hector-Lagarda sostenlo
 @Hector-Lagarda fonsi
 @Hector-Lagarda ohmaigad
@@ -35,6 +38,9 @@ Audios:
 @Hector-Lagarda pinky
 @Hector-Lagarda gag
 @Hector-Lagarda vaquero
+@Hector-Lagarda sotelovv
+@Hector-Lagarda nose
+@Hector-Lagarda venga
 
 LICENSE:
 This bot was made for personal use and no other itention
