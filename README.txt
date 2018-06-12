@@ -43,7 +43,7 @@ Audios:
 @Hector-Lagarda venga
 
 LICENSE:
-This bot was made for personal use and no other itention
+This bot was made for personal use and no other intention
 Please refer to LICENSE
 
 Author:
