@@ -690,4 +690,4 @@ async def on_message(message):
     
 TOKEN = os.environ.get('TOKEN', None)
 print(TOKEN)
-bot.run('TOKEN')
+bot.run(TOKEN)
